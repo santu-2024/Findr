@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
+import {Route} from 'react-router-dom'
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+ 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter> 
+    <div className='grid-container'> 
+    <header>
+      <div></div>
+    </header>
+    <main> 
+      <Route path='/product/:id' component= {ProductScreen} exact></Route>
+      <Route path='/' component={HomeScreen} exact></Route>
+    </main> 
+        <footer>
+
+        </footer>
     </div>
+    </BrowserRouter>
   );
 }
 
